@@ -17,7 +17,7 @@
 	<script src="http://code.highcharts.com/modules/exporting.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Fenix|Lato:100,300,400' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="page-header-fixed page-sidebar-closed">
 	<% if notice || alert %>
 		<div class="notifications">
 			<% if notice %>
@@ -28,14 +28,22 @@
 		</div>
 	<% end %>
 
-	<div id="wrap">
-		<%= render 'layouts/header' %>
-		<%= announce Announcement.newest, :hide_message => "Hide Message" %>
-		<div class="container">
+	<%= render 'layouts/header' %>
+	<%= announce Announcement.newest, :hide_message => "Hide Message" %>
+	<div class="clearfix"></div>
+	<div class="page-container">
+		<%= render 'layouts/sidebar' %>
+		<div class="page-content">
 			<%= yield %>
 		</div>
-		<div id="push"></div>
 	</div>
 	<%= render 'layouts/footer' %>
+	<script>
+		jQuery(document).ready(function() {
+		   // initiate layout and plugins
+		   App.init();
+		   Inbox.init();
+		});
+	</script>
 </body>
 </html>
