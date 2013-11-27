@@ -15,7 +15,6 @@
   <%= favicon_link_tag '/hearthstatslogo.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <script src="http://code.highcharts.com/highcharts.js"></script>
 	<script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Fenix|Lato:100,300,400' rel='stylesheet' type='text/css'>
 </head>
 <body class="page-header-fixed page-sidebar-closed">
 	<% if notice || alert %>
@@ -29,12 +28,15 @@
 	<% end %>
 
 	<%= render 'layouts/header' %>
-	<%= announce Announcement.newest, :hide_message => "Hide Message" %>
+	<!-- <%= announce Announcement.newest, :hide_message => "Hide Message" %> -->
 	<div class="clearfix"></div>
 	<div class="page-container">
 		<%= render 'layouts/sidebar' %>
 		<div class="page-content">
-			<%= render 'layouts/tempage' %>
+			<!-- BEGIN PAGE HEADER -->
+			<%= render 'layouts/breadcrumbs' %>
+			<!-- END PAGE HEADER -->
+			<%= yield %>
 		</div>
 	</div>
 	<%= render 'layouts/footer' %>

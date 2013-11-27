@@ -54,7 +54,6 @@ gem 'nprogress-rails'
 gem 'sitemap_generator'
 gem 'friendly_id'
 gem 'impressionist'
-gem "font-awesome-rails"
 
 gem "rspec-rails", :group => [:test, :development]
 gem "factory_girl_rails", :group => [:test, :development]
