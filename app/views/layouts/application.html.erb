@@ -16,7 +16,11 @@
   <script src="http://code.highcharts.com/highcharts.js"></script>
 	<script src="http://code.highcharts.com/modules/exporting.js"></script>
 </head>
-<body class="page-header-fixed page-sidebar-closed">
+<% if request.fullpath == "/" %>
+	<body class="page-header-fixed">
+<% else %>
+	<body class="page-header-fixed page-sidebar-closed">
+<% end %>
 	<% if notice || alert %>
 		<div class="notifications">
 			<% if notice %>
@@ -44,12 +48,9 @@
 	  jQuery(document).ready(function() {
 	     App.init(); // initlayout and core plugins
 	     Index.init();
+	     Index.initMiniCharts();
 	     Index.initJQVMAP(); // init index page's custom scripts
 	     Index.initCalendar(); // init index page's custom scripts
-	     Index.initCharts(); // init index page's custom scripts
-	     Index.initChat();
-	     Index.initMiniCharts();
-	     Index.initDashboardDaterange();
 	     Index.initIntro();
 	     Tasks.initDashboardWidget();
 	  });

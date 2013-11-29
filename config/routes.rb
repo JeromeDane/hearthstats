@@ -21,7 +21,7 @@ Hearthstats::Application.routes.draw do
     end
   end
 
-  
+
   resources :profiles
   resources :decks
   resources :dashboards do
@@ -39,6 +39,7 @@ Hearthstats::Application.routes.draw do
   resources :arenas do
     collection do
       get :archives
+      get :stats
     end
   end
   authenticated :user do
