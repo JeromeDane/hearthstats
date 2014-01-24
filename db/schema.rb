@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140105060302) do
+ActiveRecord::Schema.define(:version => 20140124210304) do
 
   create_table "announcements", :force => true do |t|
     t.text      "body"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20140105060302) do
     t.string    "decklink"
     t.string    "slug"
     t.text      "notes"
+    t.integer   "slot"
   end
 
   add_index "decks", ["slug"], :name => "index_decks_on_slug"
@@ -160,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20140105060302) do
     t.timestamp "updated_at",                            :null => false
     t.integer   "tourny_id"
     t.boolean   "guest"
+    t.string    "apikey"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
