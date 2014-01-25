@@ -23,7 +23,9 @@ class ArenaRun < ActiveRecord::Base
   	goldamount.each do |g|
   		total_gold += g
   	end
-
+  	if total_gold.nil?
+  		total_gold = 0
+  	end
   	total_gold
   end
 
@@ -34,7 +36,9 @@ class ArenaRun < ActiveRecord::Base
   	dustamount.each do |g|
   		total_dust += g
   	end
-
+  	if total_dust.nil?
+  		total_dust = 0
+  	end
   	total_dust
   end
 

@@ -32,6 +32,8 @@ class ArenasController < ApplicationController
 	    @arenarun = ArenaRun.where(user_id: current_user.id, complete: false).last
 	    session[:arenarunid]=@arenarun.id
 	  end
+	  @runwins = Arena.where(arena_run_id: session[:arenarunid], win: true).count
+    @runloses = Arena.where(arena_run_id: session[:arenarunid], win: false).count
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @arena }
