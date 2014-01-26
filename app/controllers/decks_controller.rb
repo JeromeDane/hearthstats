@@ -47,7 +47,7 @@ class DecksController < ApplicationController
 
     #calculate deck winrate
     @winrate = 0
-    if @deck.constructeds.count > 0 
+    if @deck.constructeds.count > 0
       @winrate = (@deck.constructeds.where(win: true).count.to_f / @deck.constructeds.count * 100)
     end
 
@@ -115,5 +115,21 @@ class DecksController < ApplicationController
       format.html { redirect_to decks_url }
       format.json { head :no_content }
     end
+  end
+
+  def active_decks
+    @decks = Deck.where(:user_id => current_user.id)
+    @myDecks = getMyDecks()
+
+  end
+
+  def submit_active_decks
+
+  end
+
+  private
+
+  def getMyDecks()
+    return Deck.where(:user_id => current_user.id).order(:race, :name).all
   end
 end
