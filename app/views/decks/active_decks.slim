@@ -12,6 +12,5 @@
           - deckName = @activeDecks.where(slot: i)[0].name unless @activeDecks.where(slot: i)[0].nil?
           = select_tag( "#{i}", options_for_select(@myDecks.map{ |d| [d.name, d.name, {:class => d.race}]}, deckName), class: "slot-decks")
     = submit_tag "submit"
-/ javascript:
-/   app.UI.initClassSelector('#deck-1');
-/   app.UI.initDeckSelector("#deckname_0")
+javascript:
+   app.UI.initDeckSelector("select.slot-decks")
