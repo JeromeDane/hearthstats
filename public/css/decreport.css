@@ -1,11 +1,11 @@
-/*// Custom css*/
+/* Custom css*/
 /*Splash required css*/
 .main{
 	height: 100%;
 }
-.splash{
+.main #splash{
 	height: 100%;
-	background: url('/assets/decbg.jpg') no-repeat center top fixed;
+	background: url('/assets/janbg.jpg') no-repeat center top fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -42,6 +42,9 @@
 	font-size: 30px;
 }
 .page4{
+	/*background-color: #3498db;*/
+}
+.page5{
 	background-color: #3498db;
 }
 .page_container{
@@ -60,10 +63,12 @@
 }
 .arena-win-rates{
 	margin: auto;
+	border-collapse: collapse;
+	border-style: hidden;
 }
-.arena-win-rates td{
+.arena-win-rates td, .arena-win-rate th {
 	padding: 20px;
-	/*border: 1px solid #7f8c8d;*/
+	border: 1px solid white;
 }
 
 /* HTML from Bootstrap */
@@ -90,6 +95,11 @@ body, html {
     -ms-text-size-adjust: 100%;
 }
 
+
+/* Arena Win Count */
+	.run-percent{
+		font-size: 12px;
+	}
 
 /* Main Style */
 body {
@@ -156,7 +166,7 @@ h3 {
 }
 
 .nav-top a {
-	padding: 0.41em 1em;
+	padding: 0 0.4em 0 0.4em;
 	letter-spacing: 0.1em;
 	color: #444;
 	display: inline-block;
@@ -169,7 +179,7 @@ h3 {
 
 .nav-social {
 	float: left;
-	padding: 0.6em 0.6em 0 0.6em;
+	padding: 5px 0.6em 0 0.6em;
 }
 
 .nav-social span {
@@ -241,7 +251,7 @@ body .dec_header{
 .main p {
   color: #ecf0f1;
   font-size: 16px;
-  font-weight: 100;
+  /*font-weight: 100;*/
 }
 
 .nav-top a {
@@ -402,4 +412,64 @@ body, .onepage-wrapper, html {
   border: 1px solid black;
   margin-top: -4px;
   left: 8px;
+}
+.tracking{
+	margin-top: 84px;
+}
+.tracking .auto{
+	font-size: 30px;
+}
+
+.tracking a{
+	color: #f1c40f;
+}
+.tracking .download{
+	font-size: 60px;
+}
+
+.tracking a:hover {
+	color: #f39c12;
+}
+
+.tracking .disclaimer{
+	font-size: 12px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.hsinfo{
+	padding-right: 40px;
+}
+
+/* Go To Top */
+
+.go-top {
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	text-decoration: none;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	font-size: 12px;
+	padding: 1em;
+	display: none;
+}
+
+.go-top:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+.hsstats{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+/*Patch number*/
+#splash{
+	position: relative;
+}
+
+#splash .patch{
+	padding: 10px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.6);
 }

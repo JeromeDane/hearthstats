@@ -20,9 +20,12 @@ Hearthstats::Application.routes.draw do
   match "/aboutus", to: "additional#aboutus"
   match "/help", to: "additional#help"
   match "/changelog", to: "additional#changelog"
+  match "/news", to: "additional#news"
+
+  # Monthly Reports
+  match "/jan", to: "welcome#janreport"
   match "/dec", to: "welcome#decreport"
   match "/nov", to: "welcome#novreport"
-  match "/news", to: "additional#news"
 
   get "admin/index"
   get "admin/addprofileuserid"
@@ -32,7 +35,7 @@ Hearthstats::Application.routes.draw do
   post "admin/update_patch"
 
   get "welcome/index"
-  post "welcome/demo_user"
+  get "welcome/demo_user"
 
   resources :arena_runs do
     collection do
